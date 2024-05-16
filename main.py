@@ -1,14 +1,4 @@
 from fastapi import FastAPI
-
-app=FastAPI()
-
-
-@app.get("/")
-def index():
-    return {'data':{'name':'Jagdish'}}
-
-
-@app.get("/about")
-def about():
-    return {'data':'About page'}
-  
+from routes.project import project
+app = FastAPI()
+app.include_router(project)
